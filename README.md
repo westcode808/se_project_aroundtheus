@@ -19,19 +19,19 @@ Technology:
 - Figma
 - VS Code
 
-![preview of project, 1280px](images/demo/1280px_demo.png)
+![preview of project, 1280px](./images/demo/1280px_demo.png)
 
 Screen display set 1280px and compatible in larger sizes.
 
-![preview of project, 780px](images/demo/780px_demo.png)
+![preview of project, 780px](./images/demo/780px_demo.png)
 
 First media query set 780px to avoid edit and add button from colliding. Font sizes in user name and description were reduced slightly to improve a smoother transition as screen sizes shrink.
 
-![preview of project, 660px](images/demo/660px_demo.png)
+![preview of project, 660px](./images/demo/660px_demo.png)
 
 Next media query set at 660px. As screen size shrink, buttons collided and name does not display due to lack of horizontal space. Cards drop from three columns down to two columns. As the page continues to transition to mobile view, 320px; fonts, headers, profile, and footer styles for mobile view are loaded.
 
-![preview of project, 320px](images/demo/320px_demo.png)
+![preview of project, 320px](./images/demo/320px_demo.png)
 
 Preview of 320px, mobile view.
 
