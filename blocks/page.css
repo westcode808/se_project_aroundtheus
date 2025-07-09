@@ -1,0 +1,19 @@
+.page {
+  font-family: Inter, Arial, "Noto Serif", "Times New Roman";
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.page__section {
+  max-width: 880px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.page__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 20px;
+}
