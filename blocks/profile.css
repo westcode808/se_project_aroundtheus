@@ -31,6 +31,10 @@
   overflow: hidden;
 }
 
+.profile__edit-button:hover {
+  cursor: pointer;
+}
+
 .profile__edit-button {
   height: 24px;
   width: 24px;
@@ -48,6 +52,10 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 373px;
+}
+
+.profile__add-button:hover {
+  cursor: pointer;
 }
 
 .profile__add-button {
