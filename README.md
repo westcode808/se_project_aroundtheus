@@ -35,6 +35,11 @@ Next media query set at 660px. As screen size shrink, buttons collided and name 
 
 Preview of 320px, mobile view.
 
+## Deployment
+
+This webpage is deployed on GitHub Pages
+[Deployment Link](https://westcode808.github.io/se_project_aroundtheus/)
+
 ## Getting Started
 
 To view and run the project:

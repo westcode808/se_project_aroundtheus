@@ -33,10 +33,12 @@
 
 .card__like-button:hover {
   cursor: pointer;
+  opacity: 50%;
 }
 
 .card__like-button {
   background: url(../images/like-inactive.svg) center no-repeat;
+  color: #000000;
   border: none;
   width: 21px;
   height: 18px;
