@@ -1,0 +1,133 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 19px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  font-family: Inter, Arial, "Noto Serif", "Times New Roman";
+}
+
+.modal_opened {
+  display: flex;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 36px 36px;
+  border-radius: 10px;
+  position: relative;
+  margin: auto;
+  width: 358px;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.modal__close {
+  background-image: url(../images/Close-Icon-inactive.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.modal__heading {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0;
+  padding: 0 0 54px;
+  height: 23px;
+}
+
+.modal__form {
+  width: 358px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  border-style: none;
+}
+
+.modal__input {
+  height: 27px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid #000000;
+  font-size: 14px;
+  color: #000000;
+}
+
+.modal__button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.modal__button {
+  background-color: #000;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  width: 358px;
+  height: 50px;
+  padding: 0;
+  border-radius: 2px;
+  align-self: center;
+  margin-left: auto;
+  margin-top: 18px;
+}
+
+@media screen and (max-width: 780px) {
+  .modal__container {
+    padding: 25px 22px;
+  }
+
+  .modal__close {
+    position: absolute;
+    bottom: calc(100% + 30px);
+    left: calc(100% - 30px);
+    border: none;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .modal {
+    padding: 0 0;
+  }
+
+  .modal__container {
+    width: 238px;
+  }
+
+  .modal__heading {
+    width: 238px;
+    height: 22px;
+    font-size: 18px;
+    padding: 0 0 75px;
+  }
+
+  .modal__form {
+    width: 238px;
+  }
+
+  .modal__input {
+  }
+
+  .modal__button {
+    width: 238px;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+}
