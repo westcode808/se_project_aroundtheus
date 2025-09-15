@@ -25,14 +25,57 @@ const initialCards = [
   },
 ];
 
+/* Elements */
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileCloseButton = document.querySelector("#profile-close-button");
+const profileName = document.querySelector(".profile__name");
+const profileDescription = document.querySelector(".profile__description");
+const profileNameInput = document.querySelector("#profile-title-input");
+const profileDescriptionInput = document.querySelector(
+  "#profile-description-input"
+);
+const profileEditForm = profileEditModal.querySelector(".modal__form");
+const cardListElement = document.querySelector(".cards__list");
+const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 
+/* Functions */
+function closePopUp() {
+  profileEditModal.classList.remove("modal_opened");
+}
+
+function getCardElement(cardData) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardAltText = cardElement.querySelector(".card__image");
+  const cardTitleElement = cardElement.querySelector(".card__title");
+
+  cardImageElement.src = cardData.link;
+  cardAltText.textContent = cardData.name;
+  cardTitleElement.textContent = cardData.name;
+  
+  return cardElement;  
+}
+
+/* Event Handlers */
+function handleProfileFormSubmit(event) {
+event.preventDefault();
+  profileName.textContent = profileNameInput.value;
+  profileDescription.textContent = profileDescriptionInput.value;
+  closePopUp();
+}
+
+/* Event Listeners */
 profileEditButton.addEventListener("click", () => {
+  profileNameInput.value = profileName.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
   profileEditModal.classList.add("modal_opened");
 });
 
-profileCloseButton.addEventListener("click", () => {
-  profileEditModal.classList.remove("modal_opened");
+profileCloseButton.addEventListener("click", closePopUp);
+profileEditForm.addEventListener("submit", handleProfileFormSubmit); 
+
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardListElement.append(cardElement);
 });
