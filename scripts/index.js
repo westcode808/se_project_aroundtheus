@@ -40,6 +40,9 @@ const cardListElement = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 
 /* Functions */
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
 function closePopUp() {
   profileEditModal.classList.remove("modal_opened");
 }
@@ -47,11 +50,10 @@ function closePopUp() {
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
-  const cardAltText = cardElement.querySelector(".card__image");
   const cardTitleElement = cardElement.querySelector(".card__title");
 
   cardImageElement.src = cardData.link;
-  cardAltText.textContent = cardData.name;
+  cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   
   return cardElement;  
@@ -59,6 +61,9 @@ function getCardElement(cardData) {
 
 /* Event Handlers */
 function handleProfileFormSubmit(event) {
+if (!profileNameInput.value.trim() || !profileDescriptionInput.value.trim()) {
+  return; 
+  }
 event.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
@@ -69,7 +74,7 @@ event.preventDefault();
 profileEditButton.addEventListener("click", () => {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
+  openModal(profileEditModal);
 });
 
 profileCloseButton.addEventListener("click", closePopUp);
