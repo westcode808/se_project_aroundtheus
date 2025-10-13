@@ -63,11 +63,18 @@ function getCardElement(cardData) {
   const cardImageElement = cardElement.querySelector(".card__image");
   const cardTitleElement = cardElement.querySelector(".card__title");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardTrashButton = cardElement.querySelector(".card__trash-button");
+
 
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_active");
 
 })
+
+  cardTrashButton.addEventListener("click", () => {
+    cardElement.remove();
+  })
+
 
   cardImageElement.src = cardData.link;
   cardImageElement.alt = cardData.name;
@@ -105,16 +112,6 @@ profileEditButton.addEventListener("click", () => {
 profileCloseButton.addEventListener("click", closePopUp);
 profileEditForm.addEventListener("submit", handleProfileFormSubmit); 
 addCardModalForm.addEventListener("submit", handleAddCardFormSubmit); 
-
-  // add event listener for delete
-    // cardElement.remove();
-
-  // add event listener for image modal popup
-    // open popup
-    // find image element inside popup
-    // replace src with card link
-    // replace alt with card title?
-
 
 // Add New Card Button
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
