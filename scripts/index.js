@@ -136,6 +136,8 @@ event.preventDefault();
 profileEditButton.addEventListener("click", () => {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+
+  resetValidation(profileEditForm, config);
   openModal(profileEditModal);
 });
 
@@ -144,7 +146,12 @@ profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 addCardModalForm.addEventListener("submit", handleAddCardFormSubmit); 
 
 // Add New Card Button
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
+addNewCardButton.addEventListener("click", () => {
+  addCardModalForm.reset();
+  resetValidation(addCardModalForm, config);
+  openModal(addCardModal);
+});
+
 addCardModalCloseButton.addEventListener("click", () => closeModal(addCardModal));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));

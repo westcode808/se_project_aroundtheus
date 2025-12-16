@@ -68,6 +68,17 @@ function enableValidation(options) {
         setEventListeners(formElement, options);
     });
 };
+
+function resetValidation(formElement, options) {
+    const inputList = Array.from(formElement.querySelectorAll(options.inputSelector));
+    const submitButton = formElement.querySelector(options.submitButtonSelector);
+
+    inputList.forEach((inputElement) => {
+        hideInputError(formElement, inputElement, options);
+    });
+
+    toggleButtonState(inputList, submitButton, options);
+}
     
 
 const config = {
