@@ -49,6 +49,7 @@ profileEditButton.addEventListener("click", () => {
 
 //  Add Card Modal
 addNewCardButton.addEventListener("click", () => {
+  addCardValidator.resetValidation();
   addCardPopup.open();
 });
 
